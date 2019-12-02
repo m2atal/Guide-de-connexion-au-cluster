@@ -54,13 +54,17 @@ Possible en une ligne, en sachant qu'il n'est pas nécessaire de réétablir le 
 ssh -f -N -L:port_local:transit.univ-lemans.fr:22 identifiant_univ_nantes@bastion.etu.univ-nantes.fr && ssh -A -t identifiant_lemans@localhost -p port_local ssh -A skinner
 ```
 En utilisant cette commande, il faut donc entrer une fois le mot de passe univ nantes et deux fois le mot de passe univ lemans.
+
 ## Récuperer un fichier des serveurs du mans sur votre machine
+
 Vous allez probablement avoir besoin de récuperer un graphe ou un PDF depuis les cluster sauf que GRANDE TRISTESSE les serveurs n'ont pas d'interface graphique et ouvrir le joli dessin que vous avez fait est inouvrable...
-Afin de récuperer le fichier et l'ouvrir sur votre PC il vous faudra utiliser la commande #SCP# de bash
+Afin de récuperer le fichier et l'ouvrir sur votre PC il vous faudra utiliser la commande SCP de bash
 
 Pour se faire vous avez besoin de deux terminaux:
  - un connecté à skinner
  - un autre pour votre PC
+
+
 
 Dans le terminal ou se trouve skinner placez vous dans le dossier qui contient le fichier que vous voulez récuperer et faite
 ```sh
@@ -72,13 +76,27 @@ Où
  - le_nouveau_nom_du_fichier.extension est le nouveau nom du fichier il n'est pas nécessairement le meme que le_nom_du_fichier mais c'est quand même mieux. L'extension doit evidement rester la même
  
  En utilisant cette commande, il faut donc entrer une fois le mot de passe univ lemans.
-
-Ensuite depuis le second terminal faites
+### sur le réseau de la fac
+Ensuite assurez vous que vous êtes bien toujours connecté à la passerelle __**bastion**__ et depuis le second terminal faites
 ```sh
 scp -P port_local identifiant_lemans@localhost:le_nouveau_nom_du_fichier.extension le_chemin_absolue_de votre_PC
 ```
 Où
  - port_local doit être précisement le meme que celui pour votre connexion ssh
+ - identifiant_lemans est le meme que pour la connexion ssh
+ - le_nouveau_nom_du_fichier.extension doit etre le même que plus haut
+ - le_chemin_absolue_de votre_PC est la zone ou vous voulez stocker votre fichier en chemin absolue pour linux par exemple ce sera /home/Dupont/Documents/
+ 
+ En utilisant cette commande, il faut donc entrer une fois le mot de passe univ lemans.
+
+### Sur un réseau non bloqué
+Depuis le second terminal faites
+
+```sh
+scp identifiant_lemans@transit.univ-lemans.fr:le_nouveau_nom_du_fichier.extension le_chemin_absolue_de votre_PC
+```
+
+Où
  - identifiant_lemans est le meme que pour la connexion ssh
  - le_nouveau_nom_du_fichier.extension doit etre le même que plus haut
  - le_chemin_absolue_de votre_PC est la zone ou vous voulez stocker votre fichier en chemin absolue pour linux par exemple ce sera /home/Dupont/Documents/
