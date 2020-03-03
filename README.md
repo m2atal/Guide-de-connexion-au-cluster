@@ -46,7 +46,7 @@ ssh -A -t identifiant_lemans@localhost -p port_local ssh -A skinner
 
 où
  - `port_local` est un port TCP libre supérieur à 1024 (basiquement un numéro quelquonque entre 1024 et 65535)
- - `identifiant_univ_nantes est le numéro d'étudiant de nantes, de la forme E123456L
+ - `identifiant_univ_nantes` est le numéro d'étudiant de nantes, de la forme E123456L
 
 Possible en une ligne, en sachant qu'il n'est pas nécessaire de réétablir le tunnel ssh s'il est déjà en place et que tenter de réétablir un tunnel peut faire planter la connexion :
 ```sh
@@ -70,7 +70,7 @@ scp le_nom_du_fichier.extension identifiant_lemans@transit.univ-lemans.fr:le_nou
 où
  - `le_nom_du_fichier.extension` correspond au nom du fichier tel qu'il est inscrit sur skinner ainsi que son extension,
  - `identifiant_lemans` est exactement le même que pour la connexion ssh,
- - `le_nouveau_nom_du_fichier.extension` est le nouveau nom du fichier, pas nécessairement le même que le_nom_du_fichier (mais c'est quand même mieux). L'extension doit évidemment rester la même.
+ - `le_nouveau_nom_du_fichier.extension` est le nouveau nom du fichier, pas nécessairement le même que `le_nom_du_fichier.extension` (mais c'est quand même mieux). L'extension doit évidemment rester la même.
  
  En utilisant cette commande, il faut donc entrer une fois le mot de passe univ lemans.
  
