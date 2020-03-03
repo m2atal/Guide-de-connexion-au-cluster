@@ -105,6 +105,57 @@ Où
 
 Et voila vous avez récuperer votre fichier!
 
+## Envoyer un fichier sur les serveurs du mans depuis votre machine
+
+Vous allez probablement avoir besoin d'envoyer aussi des fichiers
+Afin de récuperer le fichier et l'ouvrir sur votre PC il vous faudra utiliser la commande SCP de bash encore une fois
+
+Pour se faire vous avez toujours besoin de deux terminaux:
+ - un connecté à skinner
+ - un autre pour votre PC
+
+Dans un premier temps prenez le terminal connecté a votre PC
+### sur le réseau de la fac
+assurez vous que vous êtes bien toujours connecté à la passerelle __**bastion**__ et faites
+```sh
+scp -P port_local le_chemin_de votre_fichier identifiant_lemans@localhost:le_nouveau_nom_du_fichier.extension 
+```
+Où
+ - port_local doit être précisement le meme que celui pour votre connexion ssh
+ - identifiant_lemans est le meme que pour la connexion ssh
+ - le_nouveau_nom_du_fichier.extension est le nom du fichier que vous souhaitez (oui vous pouvez renomer vos fichier)
+ - le_chemin_absolue_de votre_fichier est le chemin a emprunter depuis le répertoire courant jusqu'a votre fichier a envoyer
+ 
+ En utilisant cette commande, il faut donc entrer __une fois le mot de passe univ lemans__.
+
+### Sur un réseau non bloqué
+C'est bien plus simple faites
+
+```sh
+scp le_chemin_absolue_de votre_fichier identifiant_lemans@transit.univ-lemans.fr:le_nouveau_nom_du_fichier.extension 
+```
+
+Où
+ - identifiant_lemans est le meme que pour la connexion ssh
+ - le_nouveau_nom_du_fichier.extension doit etre le même que plus haut
+ - le_chemin_absolue_de votre_fichier est le chemin a emprunter depuis le répertoire courant jusqu'a votre fichier a envoyer
+ 
+ En utilisant cette commande, il faut donc entrer __une fois le mot de passe univ lemans__.
+
+Ensuite prenez le terminal ou se trouve skinner et faites :
+```sh
+scp identifiant_lemans@transit.univ-lemans.fr:le_nouveau_nom_du_fichier.extension le_nom_du_fichier.extension
+```
+Où
+ - le_nom_du_fichier.extension correspond au nom du fichier tel que vous voulez le nommer sur skinner
+ - identifiant_lemans est exactement le meme que pour la connexion ssh
+ - le_nouveau_nom_du_fichier.extension doit etre exactement le meme que celui de la premiere commande scp 
+ 
+ En utilisant cette commande, il faut donc entrer __une fois le mot de passe univ lemans__.
+
+
+Et voila vous avez envoyer votre fichier!
+
 
 ## Salles et emploi du temps
 ### Salles sans visio
