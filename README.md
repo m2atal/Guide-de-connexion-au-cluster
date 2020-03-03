@@ -45,8 +45,8 @@ ssh -A -t identifiant_lemans@localhost -p port_local ssh -A skinner
 ```
 
 où
- - port_local est un port TCP libre supérieur à 1024 (basiquement un numéro quelquonque entre 1024 et 65535)
- - identifiant\_univ\_nantes est le numéro d'étudiant de nantes, de la forme E123456L
+ - `port_local` est un port TCP libre supérieur à 1024 (basiquement un numéro quelquonque entre 1024 et 65535)
+ - `identifiant_univ_nantes est le numéro d'étudiant de nantes, de la forme E123456L
 
 Possible en une ligne, en sachant qu'il n'est pas nécessaire de réétablir le tunnel ssh s'il est déjà en place et que tenter de réétablir un tunnel peut faire planter la connexion :
 ```sh
@@ -68,22 +68,22 @@ Dans le terminal ou se trouve skinner, placez-vous dans le dossier qui contient 
 scp le_nom_du_fichier.extension identifiant_lemans@transit.univ-lemans.fr:le_nouveau_nom_du_fichier.extension
 ```
 où
- - le_nom_du_fichier.extension correspond au nom du fichier tel qu'il est inscrit sur skinner ainsi que son extension,
- - identifiant_lemans est exactement le même que pour la connexion ssh,
- - le_nouveau_nom_du_fichier.extension est le nouveau nom du fichier, pas nécessairement le même que le_nom_du_fichier (mais c'est quand même mieux). L'extension doit évidemment rester la même.
+ - `le_nom_du_fichier.extension` correspond au nom du fichier tel qu'il est inscrit sur skinner ainsi que son extension,
+ - `identifiant_lemans` est exactement le même que pour la connexion ssh,
+ - `le_nouveau_nom_du_fichier.extension` est le nouveau nom du fichier, pas nécessairement le même que le_nom_du_fichier (mais c'est quand même mieux). L'extension doit évidemment rester la même.
  
  En utilisant cette commande, il faut donc entrer une fois le mot de passe univ lemans.
  
 ### sur le réseau de la fac
 Ensuite assurez-vous que vous êtes bien toujours connecté à la passerelle __**bastion**__ et depuis le second terminal faites :
 ```sh
-scp -P port_local identifiant_lemans@localhost:le_nouveau_nom_du_fichier.extension le_chemin_absolue_de votre_PC
+scp -P port_local identifiant_lemans@localhost:le_nouveau_nom_du_fichier.extension le_chemin_absolue_de_votre_PC
 ```
 où
- - port_local doit être précisement le même que celui pour votre connexion ssh,
- - identifiant_lemans est le même que pour la connexion ssh,
- - le_nouveau_nom_du_fichier.extension doit etre le même que plus haut,
- - le_chemin_absolue_de votre_PC est l'endroit ou vous voulez stocker votre fichier en chemin absolu pour linux par exemple ce sera /home/Dupont/Documents/.
+ - `port_local` doit être précisement le même que celui pour votre connexion ssh,
+ - `identifiant_lemans` est le même que pour la connexion ssh,
+ - `le_nouveau_nom_du_fichier.extension` doit etre le même que plus haut,
+ - `le_chemin_absolue_de_votre_PC` est l'endroit ou vous voulez stocker votre fichier en chemin absolu pour linux par exemple ce sera /home/Dupont/Documents/.
  
  En utilisant cette commande, il faut donc entrer une fois le mot de passe univ lemans.
 
@@ -91,13 +91,13 @@ où
 Depuis le second terminal, faites :
 
 ```sh
-scp identifiant_lemans@transit.univ-lemans.fr:le_nouveau_nom_du_fichier.extension le_chemin_absolue_de votre_PC
+scp identifiant_lemans@transit.univ-lemans.fr:le_nouveau_nom_du_fichier.extension le_chemin_absolue_de_votre_PC
 ```
 
 où
- - identifiant_lemans est le même que pour la connexion ssh,
- - le_nouveau_nom_du_fichier.extension doit etre le même que plus haut,
- - le_chemin_absolue_de votre_PC est la zone ou vous voulez stocker votre fichier en chemin absolu pour linux par exemple ce sera /home/Dupont/Documents/.
+ - `identifiant_lemans` est le même que pour la connexion ssh,
+ - `le_nouveau_nom_du_fichier.extension` doit etre le même que plus haut,
+ - `le_chemin_absolue_de_votre_PC` est la zone ou vous voulez stocker votre fichier en chemin absolu pour linux par exemple ce sera /home/Dupont/Documents/.
  
 En utilisant cette commande, il faut donc entrer une fois le mot de passe univ lemans.
 
@@ -116,13 +116,13 @@ Dans un premier temps, prenez le terminal connecté a votre PC
 ### sur le réseau de la fac
 assurez vous que vous êtes bien toujours connecté à la passerelle __**bastion**__ et faites :
 ```sh
-scp -P port_local le_chemin_de votre_fichier identifiant_lemans@localhost:le_nouveau_nom_du_fichier.extension 
+scp -P port_local le_chemin_de_votre_fichier identifiant_lemans@localhost:le_nouveau_nom_du_fichier.extension 
 ```
 où
- - port_local doit être précisement le même que celui pour votre connexion ssh
- - identifiant_lemans est le même que pour la connexion ssh,
- - le_nouveau_nom_du_fichier.extension est le nom du fichier que vous souhaitez (oui, vous pouvez renommer vos fichiers),
- - le_chemin_absolue_de votre_fichier est le chemin à emprunter depuis le répertoire courant jusqu'a votre fichier à envoyer.
+ - `port_local` doit être précisement le même que celui pour votre connexion ssh
+ - `identifiant_lemans` est le même que pour la connexion ssh,
+ - `le_nouveau_nom_du_fichier.extension` est le nom du fichier que vous souhaitez (oui, vous pouvez renommer vos fichiers),
+ - `le_chemin_absolue_de_votre_fichier` est le chemin à emprunter depuis le répertoire courant jusqu'a votre fichier à envoyer.
  
  En utilisant cette commande, il faut donc entrer __une fois le mot de passe univ lemans__.
 
@@ -130,13 +130,13 @@ où
 C'est bien plus simple, faites :
 
 ```sh
-scp le_chemin_absolue_de votre_fichier identifiant_lemans@transit.univ-lemans.fr:le_nouveau_nom_du_fichier.extension 
+scp le_chemin_absolue_de_votre_fichier identifiant_lemans@transit.univ-lemans.fr:le_nouveau_nom_du_fichier.extension 
 ```
 
 où
- - identifiant_lemans est le même que pour la connexion ssh,
- - le_nouveau_nom_du_fichier.extension doit etre le même que plus haut,
- - le_chemin_absolue_de votre_fichier est le chemin à emprunter depuis le répertoire courant jusqu'a votre fichier à envoyer.
+ - `identifiant_lemans` est le même que pour la connexion ssh,
+ - `le_nouveau_nom_du_fichier.extension` doit etre le même que plus haut,
+ - `le_chemin_absolue_de_votre_fichier` est le chemin à emprunter depuis le répertoire courant jusqu'a votre fichier à envoyer.
  
  En utilisant cette commande, il faut donc entrer __une fois le mot de passe univ lemans__.
 
@@ -145,9 +145,9 @@ Ensuite, retournez au terminal ou se trouve skinner et faites :
 scp identifiant_lemans@transit.univ-lemans.fr:le_nouveau_nom_du_fichier.extension le_nom_du_fichier.extension
 ```
 où
- - le_nom_du_fichier.extension correspond au nom du fichier tel que vous voulez le nommer sur skinner,
- - identifiant_lemans est exactement le même que pour la connexion ssh,
- - le_nouveau_nom_du_fichier.extension doit être exactement le même que celui de la première commande scp.
+ - `le_nom_du_fichier.extension` correspond au nom du fichier tel que vous voulez le nommer sur skinner,
+ - `identifiant_lemans` est exactement le même que pour la connexion ssh,
+ - `le_nouveau_nom_du_fichier.extension` doit être exactement le même que celui de la première commande scp.
  
 En utilisant cette commande, il faut donc entrer __une fois le mot de passe univ lemans__.
 
