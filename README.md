@@ -10,7 +10,7 @@ Pour éviter d'y être confronté à votre tour, voici quelques conseils et rema
 2. Si vous n'arrivez pas à engager une discussion autour du problème, n'insistez pas : contactez l'intéressé par mail.
 3. Si ça ne donne rien, parlez en au responsable de formation.
 
-Selon les cas, l'étape 2. peut être court-circuitée.
+Selon les cas, l'étape 2 peut être court-circuitée.
 Les mails semblent mieux fonctionner, peut-être parce que le destinataire a plus le temps d'ingérer et de comprendre le message.
 
 Gardez à l'esprit que les responsables de formation n'ont pas de pouvoir de décision particulier sur les autres intervenants.
@@ -25,13 +25,13 @@ Pour plus de détails, voir [https://wiki.univ-nantes.fr/doku.php?id=etudiants:r
 
 ### Sur un réseau non bloqué
 
-L'identifiant du mans est de la forme s123456.
+L'identifiant du mans est de la forme s123456 :
 ```sh
 ssh identifiant@transit.univ-lemans.fr
 ssh skinner
 ```
 
-Ou en une ligne (nécessite cependant de taper deux fois le mdp) :
+ou en une ligne (nécessite cependant de taper deux fois le mdp) :
 ```sh
 ssh -A -t -l identifiant_univ_lemans transit.univ-lemans.fr ssh -A skinner
 ```
@@ -54,9 +54,9 @@ ssh -f -N -L:port_local:transit.univ-lemans.fr:22 identifiant_univ_nantes@bastio
 ```
 En utilisant cette commande, il faut donc entrer une fois le mot de passe univ nantes et deux fois le mot de passe univ lemans.
 
-## Récuperer un fichier des serveurs du mans sur votre machine
+## Récupérer un fichier des serveurs du mans sur votre machine
 
-Vous allez probablement avoir besoin de récuperer un graphe ou un PDF depuis les cluster sauf que *GRANDE TRISTESSE* les serveurs n'ont pas d'interface graphique. Et ouvrir le joli dessin que vous avez fait est... impossible.
+Vous allez probablement avoir besoin de récupérer un graphe ou un PDF depuis les clusters sauf que *GRANDE TRISTESSE* les serveurs n'ont pas d'interface graphique. Et ouvrir le joli dessin que vous avez fait est... impossible.
 Afin de récupérer le fichier et l'ouvrir sur votre PC, il vous faudra utiliser la commande SCP de bash.
 
 Pour ce faire vous avez besoin de deux terminaux:
@@ -73,8 +73,9 @@ où
  - le_nouveau_nom_du_fichier.extension est le nouveau nom du fichier, pas nécessairement le même que le_nom_du_fichier (mais c'est quand même mieux). L'extension doit évidemment rester la même.
  
  En utilisant cette commande, il faut donc entrer une fois le mot de passe univ lemans.
+ 
 ### sur le réseau de la fac
-Ensuite assurez-vous que vous êtes bien toujours connecté à la passerelle __**bastion**__ et depuis le second terminal faites
+Ensuite assurez-vous que vous êtes bien toujours connecté à la passerelle __**bastion**__ et depuis le second terminal faites :
 ```sh
 scp -P port_local identifiant_lemans@localhost:le_nouveau_nom_du_fichier.extension le_chemin_absolue_de votre_PC
 ```
